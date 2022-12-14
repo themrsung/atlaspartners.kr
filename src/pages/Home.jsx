@@ -8,7 +8,13 @@ const Home = () => {
         <div className="Home">
             <Header type="BarHeader" activePage="Home" />
             <div className="Wrap">
-                <img src={logo} className="App-logo" alt="logo" />
+                <div className="WrapLeft">
+                    <img src={logo} className="App-logo" alt="logo" />
+                </div>
+                <div className="WrapRight">
+                    <h1>안녕하세요!</h1>
+                    <h3>ATLAS PARTNERS에 오신 것을 환영합니다.</h3>
+                </div>
             </div>
             <Footer />
         </div>
