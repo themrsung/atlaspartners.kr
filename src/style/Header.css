@@ -12,6 +12,10 @@
     margin-right: auto;
 }
 
+.HeaderLeftTitle {
+    margin-left: 5%;
+}
+
 .HeaderRight {
     height: 100%;
     margin-left: auto;
