@@ -1,13 +1,45 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+* {
+    font-family: "Noto Sans KR", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    margin: 0;
+}
+
+.Button {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.BigButton {
+    font-size: medium;
+    padding: 7px 20px;
+}
+
+.MenuButton {
+    background-color: transparent;
+    border-color: #005424;
+    color: #005424;
+    transition: linear 0.2s;
+}
+
+.MenuButton:hover {
+    background-color: #005424;
+    color: white;
+}
+
+.ActiveMenuButton {
+    background-color: #005424;
+    color: white;
+    transition: linear 0.2s;
+}
+
+.ActiveMenuButton:hover {
+    background-color: transparent;
+    border-color: #005424;
+    color: #005424;
 }
