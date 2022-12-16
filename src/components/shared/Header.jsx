@@ -1,9 +1,12 @@
+import { Link, useNavigate } from "react-router-dom"
 import "../../style/Header.css"
 
 const Header = (props) => {
     const navListInactiveButtonClassName = "Button BigButton MenuButton"
     const navListActiveButtonClassName =
         navListInactiveButtonClassName + " ActiveMenuButton"
+
+    let navigate = useNavigate()
 
     return (
         <header className="Header">
@@ -14,48 +17,56 @@ const Header = (props) => {
                 <nav className="HeaderRightNav">
                     <ul className="HeaderRightNavList">
                         <li>
-                            <button
-                                className={
-                                    props.activePage === "Home"
-                                        ? navListActiveButtonClassName
-                                        : navListInactiveButtonClassName
-                                }
-                            >
-                                Home
-                            </button>
+                            <Link to="/">
+                                <button
+                                    className={
+                                        props.activePage === "Home"
+                                            ? navListActiveButtonClassName
+                                            : navListInactiveButtonClassName
+                                    }
+                                >
+                                    Home
+                                </button>
+                            </Link>
                         </li>
                         <li>
-                            <button
-                                className={
-                                    props.activePage === "Portfolio"
-                                        ? navListActiveButtonClassName
-                                        : navListInactiveButtonClassName
-                                }
-                            >
-                                Porfolio
-                            </button>
+                            <Link to="portfolio">
+                                <button
+                                    className={
+                                        props.activePage === "Portfolio"
+                                            ? navListActiveButtonClassName
+                                            : navListInactiveButtonClassName
+                                    }
+                                >
+                                    Porfolio
+                                </button>
+                            </Link>
                         </li>
                         <li>
-                            <button
-                                className={
-                                    props.activePage === "Products"
-                                        ? navListActiveButtonClassName
-                                        : navListInactiveButtonClassName
-                                }
-                            >
-                                Products
-                            </button>
+                            <Link to="products">
+                                <button
+                                    className={
+                                        props.activePage === "Products"
+                                            ? navListActiveButtonClassName
+                                            : navListInactiveButtonClassName
+                                    }
+                                >
+                                    Products
+                                </button>
+                            </Link>
                         </li>
                         <li>
-                            <button
-                                className={
-                                    props.activePage === "Contact"
-                                        ? navListActiveButtonClassName
-                                        : navListInactiveButtonClassName
-                                }
-                            >
-                                Contact
-                            </button>
+                            <Link to="contact">
+                                <button
+                                    className={
+                                        props.activePage === "Contact"
+                                            ? navListActiveButtonClassName
+                                            : navListInactiveButtonClassName
+                                    }
+                                >
+                                    Contact
+                                </button>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
