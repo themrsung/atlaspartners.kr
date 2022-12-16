@@ -1,3 +1,5 @@
+import { nextProductIdStore } from "../reduxStores"
+
 function productsReducer(
     state = {
         value: [
@@ -13,8 +15,9 @@ function productsReducer(
 ) {
     switch (action.type) {
         case "products/added":
+            nextProductIdStore.dispatch({ type: "nextProductId/incremented" })
             return {
-                value: [...state, action.payload]
+                value: [...state.value, action.payload]
             }
         case "products/removed":
             return {

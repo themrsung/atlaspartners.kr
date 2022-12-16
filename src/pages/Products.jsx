@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Product from "../components/products/Product"
 import Footer from "../components/shared/Footer"
 import Header from "../components/shared/Header"
@@ -14,13 +15,18 @@ const Products = () => {
         justifyContent: "stretch"
     }
 
+    const [products, setProducts] = useState(productsStore.getState().value)
+    productsStore.subscribe(() => {
+        setProducts(productsStore.getState().value)
+    })
+
     return (
         <div className="Products">
             <Header type="BarHeader" activePage="Products" />
             <div className="Wrap" style={wrapStyle}>
                 <div className="ProductList">
-                    {productsStore.getState().value.map((product) => {
-                        return <Product product={product} />
+                    {products.map((product) => {
+                        return <Product key={product.key} product={product} />
                     })}
                 </div>
             </div>
