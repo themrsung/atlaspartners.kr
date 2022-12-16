@@ -1,12 +1,10 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "../../style/Header.css"
 
 const Header = (props) => {
     const navListInactiveButtonClassName = "Button BigButton MenuButton"
     const navListActiveButtonClassName =
         navListInactiveButtonClassName + " ActiveMenuButton"
-
-    let navigate = useNavigate()
 
     return (
         <header className="Header">
@@ -30,7 +28,7 @@ const Header = (props) => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="portfolio">
+                            <Link to="/portfolio">
                                 <button
                                     className={
                                         props.activePage === "Portfolio"
@@ -43,7 +41,7 @@ const Header = (props) => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="products">
+                            <Link to="/products">
                                 <button
                                     className={
                                         props.activePage === "Products"
@@ -56,7 +54,7 @@ const Header = (props) => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="contact">
+                            <Link to="/contact">
                                 <button
                                     className={
                                         props.activePage === "Contact"

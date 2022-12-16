@@ -17,25 +17,3 @@
         transform: rotate(360deg);
     }
 }
-
-.Wrap {
-    height: 94vh;
-    background-color: gray;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: stretch;
-}
-
-.WrapLeft {
-    margin-left: 5%;
-    margin-right: auto;
-}
-
-.WrapRight {
-    margin-right: 10%;
-    margin-left: auto;
-
-    text-align: right;
-}
