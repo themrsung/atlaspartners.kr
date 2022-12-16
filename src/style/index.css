@@ -13,6 +13,8 @@ body {
 .Button {
     padding: 5px 10px;
     border-radius: 5px;
+
+    white-space: nowrap;
 }
 
 .BigButton {
@@ -42,4 +44,16 @@ body {
     background-color: transparent;
     border-color: #005424;
     color: #005424;
+}
+
+.SecondaryButton {
+    background-color: transparent;
+    border-color: gray;
+    color: gray;
+    transition: linear 0.2s;
+}
+
+.SecondaryButton:hover {
+    background-color: gray;
+    color: white;
 }

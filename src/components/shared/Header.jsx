@@ -9,7 +9,7 @@ const Header = (props) => {
     return (
         <header className="Header">
             <div className="HeaderLeft">
-                <h1 className="HeaderLeftTitle">ATLAS - 개발중</h1>
+                <h1 className="HeaderLeftTitle">Atlas Partners 개발중</h1>
             </div>
             <div className="HeaderRight">
                 <nav className="HeaderRightNav">
@@ -68,6 +68,20 @@ const Header = (props) => {
                         </li>
                     </ul>
                 </nav>
+                <div className="HeaderRightProfileMenu">
+                    <ul className="HeaderRightProfileMenuList">
+                        <li>
+                            <button className="Button BigButton SecondaryButton">
+                                Log In
+                            </button>
+                        </li>
+                        <li>
+                            <button className="Button BigButton SecondaryButton">
+                                Sign Up
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </header>
     )

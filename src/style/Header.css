@@ -14,11 +14,18 @@
 
 .HeaderLeftTitle {
     margin-left: 5%;
+
+    white-space: nowrap;
 }
 
 .HeaderRight {
     height: 100%;
     margin-left: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
 }
 
 .HeaderRightNav {
@@ -41,5 +48,18 @@
 }
 
 .HeaderRightNavList > li {
-    margin-right: 5%;
+    margin-right: 1vw;
+}
+
+.HeaderRightProfileMenuList {
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
+
+.HeaderRightProfileMenuList > li {
+    margin-right: 1vw;
 }
