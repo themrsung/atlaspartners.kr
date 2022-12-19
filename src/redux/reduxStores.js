@@ -1,4 +1,5 @@
 import nextProductIdReducer from "./reducers/nextProductIdReducer"
+import portfolioReducer from "./reducers/portfolioReducer"
 
 const { configureStore } = require("@reduxjs/toolkit")
 const { default: productsReducer } = require("./reducers/productsReducer")
@@ -11,4 +12,8 @@ let nextProductIdStore = configureStore({
     reducer: nextProductIdReducer
 })
 
-export { productsStore, nextProductIdStore }
+let portfolioStore = configureStore({
+    reducer: portfolioReducer
+})
+
+export { productsStore, nextProductIdStore, portfolioStore }

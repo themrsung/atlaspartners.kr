@@ -40,7 +40,7 @@ const Header = (props) => {
                                 </button>
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to="/products">
                                 <button
                                     className={
@@ -52,7 +52,7 @@ const Header = (props) => {
                                     Products
                                 </button>
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link to="/contact">
                                 <button
@@ -68,7 +68,7 @@ const Header = (props) => {
                         </li>
                     </ul>
                 </nav>
-                <div className="HeaderRightProfileMenu">
+                {/* <div className="HeaderRightProfileMenu">
                     <ul className="HeaderRightProfileMenuList">
                         <li>
                             <button className="Button BigButton SecondaryButton">
@@ -81,7 +81,7 @@ const Header = (props) => {
                             </button>
                         </li>
                     </ul>
-                </div>
+                </div> */}
             </div>
         </header>
     )
