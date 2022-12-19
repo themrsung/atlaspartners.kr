@@ -14,10 +14,21 @@ export const getUsersState = () => {
     return store.getState()[1]
 }
 
-export const addUser = function (payload) {
+export const addUser = async function (payload) {
     store.dispatch({
         type: "users/added",
         payload: payload
+    })
+
+    await fetch("http://localhost:5000/user/add", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    }).catch((error) => {
+        window.alert(error)
+        return
     })
 }
 
