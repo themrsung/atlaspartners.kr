@@ -9,6 +9,8 @@ function App() {
     return (
         <div className="App">
             <Header />
+            <button onClick={() => {}}>add data to mongodb</button>
+            <button>get data from mongodb</button>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Newsfeed />} />
