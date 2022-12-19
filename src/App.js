@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Create from "./components/create"
 import Edit from "./components/edit"
@@ -9,27 +10,27 @@ import Newsfeed from "./pages/Newsfeed"
 import Register from "./pages/Register"
 
 function App() {
+    const [users, setUsers] = useState([])
+
+    useEffect(() => {
+        async function getRecords() {
+            const response = await fetch(`http://localhost:5000/user/`)
+
+            if (!response.ok) {
+                const message = `An error occurred: ${response.statusText}`
+                window.alert(message)
+                return
+            }
+
+            const records = await response.json()
+            setUsers(records)
+        }
+    }, [users.length])
+
     return (
         <div className="App">
             <Header />
-            <button
-                onClick={async function () {
-                    const newPerson = { id: 0, name: "James" }
-                    await fetch("http://localhost:5000/record/add", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(newPerson)
-                    }).catch((error) => {
-                        window.alert(error)
-                        return
-                    })
-                }}
-            >
-                add data to mongodb
-            </button>
-            <button>get data from mongodb</button>
+            <button onClick={console.log(users)}>get users</button>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Newsfeed />} />
