@@ -15,7 +15,7 @@ function App() {
     useEffect(() => {
         async function getRecords() {
             const response = await fetch(
-                `https://atlaspartners-kr-backend.vercel.app/user/`,
+                `http://atlaspartners-kr-backend.vercel.app/user/`,
                 {
                     mode: "no-cors"
                 }
