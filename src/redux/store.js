@@ -20,7 +20,7 @@ export const addUser = async function (payload) {
         payload: payload
     })
 
-    await fetch("https://atlaspartners-kr-backend.vercel.app/user/add", {
+    await fetch("backend.atlaspartners.kr/user/add", {
         method: "POST",
         mode: "no-cors",
         headers: {
