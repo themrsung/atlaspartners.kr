@@ -20,7 +20,7 @@ export const addUser = async function (payload) {
         payload: payload
     })
 
-    await fetch("http://localhost:5000/user/add", {
+    await fetch("https://atlaspartners-kr-backend.vercel.app/user/add", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

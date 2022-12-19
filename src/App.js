@@ -14,7 +14,9 @@ function App() {
 
     useEffect(() => {
         async function getRecords() {
-            const response = await fetch(`http://localhost:5000/user/`)
+            const response = await fetch(
+                `https://atlaspartners-kr-backend.vercel.app/user/`
+            )
 
             if (!response.ok) {
                 const message = `An error occurred: ${response.statusText}`
@@ -25,6 +27,7 @@ function App() {
             const records = await response.json()
             setUsers(records)
         }
+        getRecords()
     }, [users.length])
 
     return (
