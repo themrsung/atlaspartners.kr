@@ -20,19 +20,19 @@ export const addUser = async function (payload) {
         payload: payload
     })
 
-    await fetch("http://backend.atlaspartners.kr/user", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*"
-        },
-        body: JSON.stringify(payload)
-    }).catch((error) => {
-        window.alert(error)
-        return
-    })
+    // await fetch("http://backend.atlaspartners.kr/user", {
+    //     method: "POST",
+    //     mode: "no-cors",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //         "Access-Control-Allow-Origin": "*",
+    //         "Access-Control-Allow-Headers": "*"
+    //     },
+    //     body: JSON.stringify(payload)
+    // }).catch((error) => {
+    //     window.alert(error)
+    //     return
+    // })
 }
 
 export const removeUser = function (payload) {
