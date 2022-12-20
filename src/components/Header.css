@@ -1,0 +1,36 @@
+.Header {
+    width: 100%;
+    height: 10vh;
+    background-color: red;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+}
+
+.HeaderLeft {
+    margin-right: auto;
+    margin-left: 1%;
+}
+
+.HeaderTitleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.HeaderTitleContainer:hover {
+    cursor: pointer;
+}
+
+.HeaderTitle {
+    color: white;
+    text-decoration: none;
+}
+
+.HeaderRight {
+    margin-left: auto;
+    margin-right: 1%;
+}

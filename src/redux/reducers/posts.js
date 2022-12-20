@@ -4,7 +4,13 @@ const postsReducer = function (
             id: 0,
             title: "Title",
             content: "Content",
-            authorId: ""
+            authorId: "admin"
+        },
+        {
+            id: 1,
+            title: "제목",
+            content: "내용",
+            authorId: "admin"
         }
     ],
     action

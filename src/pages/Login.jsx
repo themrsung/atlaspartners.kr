@@ -1,15 +1,26 @@
-import { useState } from "react"
+import axios from "axios"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { hashPassword } from "../auth/hash"
-import { getUsersState } from "../redux/store"
 
 const Login = function () {
     const [userId, setUserId] = useState("")
     const [userPassword, setUserPassword] = useState("")
 
+    const [users, setUsers] = useState([])
+
+    const fetchUsers = async () => {
+        const { data } = await axios.get("http://localhost:3001/users")
+        setUsers(data)
+    }
+
+    useEffect(() => {
+        fetchUsers()
+    })
+
     const onLoginFormSubmit = function (event) {
         event.preventDefault()
-        const user = getUsersState().filter((user) => user.id === userId)[0]
+        const user = users.filter((user) => user.id === userId)[0]
         if (user) {
             if (user.password === hashPassword(userPassword)) {
                 alert("로그인 성공")
@@ -21,7 +32,7 @@ const Login = function () {
     }
 
     return (
-        <main className="Login">
+        <main className="Login Wrap">
             <form className="LoginForm" onSubmit={onLoginFormSubmit}>
                 <label>
                     <h3>ID</h3>

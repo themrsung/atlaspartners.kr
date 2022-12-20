@@ -1,0 +1,47 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "content": "content",
+      "authorId": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "dsdsd",
+      "content": "asdsa",
+      "authorId": "admin"
+    }
+  ],
+  "users": [
+    {
+      "id": "admin",
+      "password": "password"
+    },
+    {
+      "id": "DR1Ezet"
+    },
+    {
+      "id": "MxLpd7y"
+    },
+    {
+      "id": "zYvgL_-"
+    },
+    {
+      "id": "admin5",
+      "password": 1216985755
+    },
+    {
+      "id": "admin5232",
+      "password": 1216985755
+    },
+    {
+      "id": "admin777",
+      "password": 1216985755
+    },
+    {
+      "id": "admin888",
+      "password": 1216985755
+    }
+  ]
+}

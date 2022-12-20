@@ -1,11 +1,26 @@
-import { useState } from "react"
+import axios from "axios"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { hashPassword } from "../auth/hash"
-import { getUsersState, addUser } from "../redux/store"
 
 const Register = function () {
     const [userId, setUserId] = useState("")
     const [userPassword, setUserPassword] = useState("")
+
+    const [users, setUsers] = useState([])
+
+    const fetchUsers = async () => {
+        const { data } = await axios.get("http://localhost:3001/users")
+        setUsers(data)
+    }
+
+    useEffect(() => {
+        fetchUsers()
+    })
+
+    const addUser = async (user) => {
+        await axios.post("http://localhost:3001/users", user)
+    }
 
     const onRegisterFormSubmit = function (event) {
         event.preventDefault()
@@ -15,7 +30,7 @@ const Register = function () {
         }
 
         let userIdIsAlreadyTaken = false
-        getUsersState().forEach((user) => {
+        users.forEach((user) => {
             if (user.id === userId) {
                 userIdIsAlreadyTaken = true
             }
@@ -30,7 +45,7 @@ const Register = function () {
     }
 
     return (
-        <main className="Register">
+        <main className="Register Wrap">
             <form className="RegisterForm" onSubmit={onRegisterFormSubmit}>
                 <label>
                     <h3>ID</h3>
@@ -57,7 +72,8 @@ const Register = function () {
             <Link to="/login">go to login</Link>
             <button
                 onClick={() => {
-                    console.log(getUsersState())
+                    fetchUsers()
+                    console.log(users)
                 }}
             >
                 show user db

@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
+import axios from "axios"
 import { combineReducers } from "redux"
 import postsReducer from "./reducers/posts"
 import usersReducer from "./reducers/users"
@@ -7,9 +8,11 @@ export const store = configureStore({
     reducer: combineReducers([postsReducer, usersReducer])
 })
 
-export const getPostsState = () => {
-    return store.getState()[0]
+export const getPostsState = async () => {
+    const { posts } = await axios.get("http://localhost:3001/posts")
+    return posts
 }
+
 export const getUsersState = () => {
     return store.getState()[1]
 }
