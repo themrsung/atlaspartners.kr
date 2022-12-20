@@ -20,7 +20,7 @@ export const addUser = async function (payload) {
         payload: payload
     })
 
-    await fetch("http://54.180.149.213/user", {
+    await fetch("http://backend.atlaspartners.kr/user", {
         method: "POST",
         mode: "no-cors",
         headers: {

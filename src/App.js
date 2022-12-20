@@ -14,9 +14,12 @@ function App() {
 
     useEffect(() => {
         async function getRecords() {
-            const response = await fetch(`http://54.180.149.213/user`, {
-                mode: "no-cors"
-            })
+            const response = await fetch(
+                `http://backend.atlaspartners.kr/user`,
+                {
+                    mode: "no-cors"
+                }
+            )
 
             if (!response.ok) {
                 const message = `An error occurred: ${response.statusText}`
