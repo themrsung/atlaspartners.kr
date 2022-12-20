@@ -15,9 +15,14 @@ function App() {
     useEffect(() => {
         async function getRecords() {
             const response = await fetch(
-                `http://backend.atlaspartners.kr/user`,
+                "http://backend.atlaspartners.kr/user",
                 {
-                    mode: "no-cors"
+                    method: "GET",
+                    mode: "no-cors",
+                    headers: {
+                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Allow-Headers": "*"
+                    }
                 }
             )
 

@@ -24,7 +24,9 @@ export const addUser = async function (payload) {
         method: "POST",
         mode: "no-cors",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*"
         },
         body: JSON.stringify(payload)
     }).catch((error) => {
